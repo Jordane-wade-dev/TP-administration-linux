@@ -1,4 +1,4 @@
-﻿# TP1 – systemd, réseau avancé et automatisation
+﻿# TP1:systemd, réseau avancé et automatisation
 
 
 
@@ -38,7 +38,7 @@ J'avais configuré une redirection du port 2222 de Windows vers le port SSH 22 d
 
 
 
-Le support du professeur utilise principalement le compte `root`. Pour ma part, j'ai travaillé avec l'utilisateur `sysops` et utilisé `sudo` lorsque des droits administrateur étaient nécessaires.
+Le support  utiliser dans le pdf est `root`. Pour ma part, j'ai travaillé avec l'utilisateur `sysops` et utilisé `sudo` lorsque des droits administrateur étaient nécessaires.
 
 
 
@@ -46,11 +46,11 @@ Par exemple, `sudo systemctl restart helios-collect.service` modifie l'état d'u
 
 
 
-`sudo` exécute généralement la commande avec les mêmes privilèges que root, mais évite de rester en session administrateur en permanence. Certaines commandes ont donc été adaptées par rapport au support, sans changer leur objectif.
+`sudo` exécute  la commande avec les mêmes privilèges que root mais évite de rester en session administrateur en permanence ce que je ne voulais pas faire. Certaines commandes ont donc été adaptées par rapport au support, sans changer leur objectif.
 
 
 
-## 2. Mission 1 – Gestion des services systemd
+## 2. Mission 1 : Gestion des services systemd
 
 
 
@@ -154,7 +154,7 @@ La principale difficulté a été la capacité de stockage de mon ordinateur : l
 
 
 
-## 4. Mission 3 – Automatisation de l'archivage
+## 4. Mission 3 : Automatisation de l'archivage
 
 
 
