@@ -142,15 +142,64 @@ Les deux graphiques sont disponibles dans `captures/`.
 
 
 
-## 3. Mission 2 – Réseau avancé
+## 3. Mission 2 : Réseau avancé
 
+### Environnement réseau et choix techniques
 
+Pour cette mission, j'ai utilisé deux machines virtuelles Rocky Linux : `srv-core` et `srv-edge`.
 
-Je n'ai pas encore réalisé la partie bonding, VLAN et routage.
+Comme mon ordinateur disposait de peu d'espace libre, j'ai créé `srv-edge` à partir d'un clone lié de `srv-core`. Cette solution m'a évité de refaire une installation complète de Linux et d'utiliser davantage de stockage.
 
+J'ai conservé une interface NAT pour l'accès SSH et ajouté deux interfaces en réseau interne `helios-lan` sur `srv-core`. Sur `srv-edge`, une seule interface interne était nécessaire.
 
+J'ai également attribué deux ports SSH différents aux machines (`2222` et `2223`) afin de pouvoir les administrer simultanément depuis PowerShell.
 
-La principale difficulté a été la capacité de stockage de mon ordinateur : les VM déjà présentes limitaient la possibilité de préparer immédiatement l'environnement réseau prévu. J'ai donc décidé de terminer et documenter les missions 1 et 3 en priorité plutôt que de risquer de manquer de temps pour le rendu.
+### Bonding active-backup
+
+J'ai configuré `bond0` avec les interfaces `enp0s9` et `enp0s10`, en utilisant le mode `active-backup`.
+
+Ce mode a été choisi parce que VirtualBox ne permet pas de tester directement une agrégation LACP avec un commutateur compatible.
+
+L'interface principale était `enp0s9`, tandis que `enp0s10` servait de secours.
+
+Pour tester la bascule, j'ai lancé un ping continu vers `srv-edge` (`10.42.0.11`), puis déconnecté virtuellement l'adaptateur 3 avec `VBoxManage`.
+
+Résultats :
+
+- 411 paquets envoyés ;
+- 410 paquets reçus ;
+- 1 paquet perdu, soit environ 0,24 % ;
+- bascule automatique vers `enp0s10`.
+
+Le test a confirmé que la communication pouvait continuer malgré la coupure du lien principal.
+
+### VLAN 42
+
+J'ai ensuite créé un VLAN 802.1Q portant l'identifiant 42 sur les deux machines.
+
+| Machine | Interface | Adresse IP |
+|---|---|---|
+| srv-core | `bond0.42` | `10.42.42.10/24` |
+| srv-edge | `enp0s9.42` | `10.42.42.11/24` |
+
+Le ping entre les deux interfaces a donné 0 % de perte.
+
+J'ai utilisé `tcpdump` pour vérifier le marquage des paquets. La capture montrait `ethertype 802.1Q (0x8100)` et `vlan 42`, ce qui confirme la présence du tag VLAN.
+
+### Routage par règles
+
+Enfin, j'ai créé une table de routage secondaire appelée `transport`, numéro 142.
+
+J'ai configuré une règle pour que les paquets provenant de `10.42.42.10` utilisent la passerelle `10.42.42.11` via `bond0.42`.
+
+Les commandes `ip route get` ont montré que :
+
+- le trafic provenant de l'adresse VLAN sélectionnait `bond0.42` ;
+- le trafic normal continuait à utiliser `enp0s3`, l'interface NAT.
+
+J'ai redémarré `srv-core` puis vérifié que les interfaces, les règles de routage et la communication entre les deux machines fonctionnaient toujours.
+
+Cette mission m'a permis de mieux comprendre la redondance réseau, la séparation  du trafic avec les VLAN et le routage selon l'adresse source.
 
 
 
@@ -252,7 +301,7 @@ Les difficultés les plus concrètes ont concerné les limites matérielles de m
 
 
 
-J'ai surtout appris à vérifier les résultats des commandes, à interpréter les erreurs et à adapter les instructions du support à mon environnement. Les missions 1 et 3 ont été testées ; la mission 2 reste à compléter.
+J'ai surtout appris à vérifier les résultats des commandes, à interpréter les erreurs et à adapter les instructions du support à mon environnement. Les trois missions ont été testées.
 
 
 
