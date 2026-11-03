@@ -1,0 +1,7 @@
+Nov 02 19:12:37 srv-core systemd[1]: Starting Archivage de la telemetrie Helios...
+Nov 02 19:12:37 srv-core helios-archive[20266]: demarrage
+Nov 02 19:12:37 srv-core helios-archive[20276]: archive /var/lib/helios/archives/telemetry-20261102-191237.csv.gz (224 lignes)
+Nov 02 19:12:37 srv-core helios-archive[20280]: purge : 0 archive(s) supprimee(s)
+Nov 02 19:12:37 srv-core helios-archive[20282]: fin d execution rc=0
+Nov 02 19:12:37 srv-core systemd[1]: helios-archive.service: Deactivated successfully.
+Nov 02 19:12:37 srv-core systemd[1]: Finished Archivage de la telemetrie Helios.
