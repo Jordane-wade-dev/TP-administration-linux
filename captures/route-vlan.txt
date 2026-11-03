@@ -1,0 +1,2 @@
+8.8.8.8 from 10.42.42.10 via 10.42.42.11 dev bond0.42 table transport uid 1000 
+    cache 
