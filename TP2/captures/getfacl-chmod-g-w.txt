@@ -1,0 +1,54 @@
++ $ setfacl -m u:tarek:rwx /srv/helios/projets/transport/tournee-j2.csv
++ $ getfacl /srv/helios/projets/transport/tournee-j2.csv
+getfacl : suppression du premier « / » des noms de chemins absolus
+# file: srv/helios/projets/transport/tournee-j2.csv
+# owner: nadia
+# group: transport
+user::rw-
+user:tarek:rwx
+user:audit-ext:r--
+group::rwx
+group:transport:rwx
+mask::rwx
+other::---
+
++ $ ls -l /srv/helios/projets/transport/tournee-j2.csv
+-rw-rwx---+ 1 nadia transport 0  3 nov.  11:15 /srv/helios/projets/transport/tournee-j2.csv
++ $ chmod g-w /srv/helios/projets/transport/tournee-j2.csv
++ $ getfacl /srv/helios/projets/transport/tournee-j2.csv
+getfacl : suppression du premier « / » des noms de chemins absolus
+# file: srv/helios/projets/transport/tournee-j2.csv
+# owner: nadia
+# group: transport
+user::rw-
+user:tarek:rwx	#effective:r-x
+user:audit-ext:r--
+group::rwx	#effective:r-x
+group:transport:rwx	#effective:r-x
+mask::r-x
+other::---
+
++ $ ls -l /srv/helios/projets/transport/tournee-j2.csv
+-rw-r-x---+ 1 nadia transport 0  3 nov.  11:15 /srv/helios/projets/transport/tournee-j2.csv
++ $ su - tarek -c 'echo x >> /srv/helios/projets/transport/tournee-j2.csv'
+-bash: ligne 1: /srv/helios/projets/transport/tournee-j2.csv: Permission non accordée
++ $ echo rc=1
+rc=1
++ $ setfacl -m m::rwx /srv/helios/projets/transport/tournee-j2.csv
++ $ getfacl /srv/helios/projets/transport/tournee-j2.csv
+getfacl : suppression du premier « / » des noms de chemins absolus
+# file: srv/helios/projets/transport/tournee-j2.csv
+# owner: nadia
+# group: transport
+user::rw-
+user:tarek:rwx
+user:audit-ext:r--
+group::rwx
+group:transport:rwx
+mask::rwx
+other::---
+
++ $ su - tarek -c 'echo x >> /srv/helios/projets/transport/tournee-j2.csv'
++ $ echo 'rc attendu 0 : 0'
+rc attendu 0 : 0
++ $ set +x

