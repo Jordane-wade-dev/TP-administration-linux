@@ -1,0 +1,50 @@
+
+Authentication Summary Report
+=============================
+total  acct
+=============================
+90  sysops
+20  nadia
+14  julien
+6  tarek
+5  audit-ext
+
+Failed Summary Report
+======================
+Range of time in logs: 11/02/2026 14:48:49.254 - 11/06/2026 04:42:15.140
+Selected time for report: 11/02/2026 14:48:49 - 11/06/2026 04:42:15.140
+Number of changes in configuration: 0
+Number of changes to accounts, groups, or roles: 1
+Number of logins: 0
+Number of failed logins: 6
+Number of authentications: 0
+Number of failed authentications: 26
+Number of users: 2
+Number of terminals: 10
+Number of host names: 4
+Number of executables: 5
+Number of commands: 1
+Number of files: 0
+Number of AVC's: 0
+Number of MAC events: 0
+Number of failed syscalls: 0
+Number of anomaly events: 0
+Number of responses to anomaly events: 0
+Number of crypto events: 0
+Number of integrity events: 0
+Number of virt events: 0
+Number of keys: 0
+Number of process IDs: 42
+Number of events: 59
+
+
+Key Summary Report
+===========================
+total  key
+===========================
+37  privesc
+4  identity
+4  sudoers
+2  sshd-config
+2  helios-setgid
+1  firewall

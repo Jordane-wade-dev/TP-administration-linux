@@ -1,0 +1,9 @@
+[Unit]
+Description=Detect repeated SSH authentication failures
+After=firewalld.service
+Requires=firewalld.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/helios-watch-auth.sh
+SuccessExitStatus=2

@@ -1,0 +1,10 @@
+[Unit]
+Description=Check SSH authentication failures every two minutes
+
+[Timer]
+OnCalendar=*:0/2
+Persistent=no
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

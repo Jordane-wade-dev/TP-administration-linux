@@ -1,0 +1,20 @@
+----
+type=USER_LOGIN msg=audit(11/06/2026 01:30:28.141:496) : pid=11892 uid=root auid=unset ses=unset subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=login acct=(unknown) exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=ssh res=failed' 
+----
+type=USER_AUTH msg=audit(11/06/2026 01:30:28.299:502) : pid=11894 uid=root auid=unset ses=unset subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=pubkey_auth grantors=auth-key acct=sysops exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=? res=success' 
+----
+type=USER_LOGIN msg=audit(11/06/2026 01:30:44.723:523) : pid=11910 uid=root auid=unset ses=unset subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=login acct=(unknown) exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=ssh res=failed' 
+----
+type=USER_AUTH msg=audit(11/06/2026 01:37:08.933:529) : pid=12226 uid=root auid=unset ses=unset subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=pubkey_auth grantors=auth-key acct=sysops exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=? res=success' 
+----
+type=USER_LOGIN msg=audit(11/06/2026 01:37:09.038:541) : pid=12226 uid=root auid=sysops ses=10 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=login id=sysops exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=ssh res=success' 
+----
+type=USER_AUTH msg=audit(11/06/2026 04:28:58.285:68) : pid=2017 uid=root auid=unset ses=unset subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=pubkey_auth grantors=auth-key acct=sysops exe=/usr/libexec/openssh/sshd-session hostname=? addr=192.168.56.11 terminal=? res=success' 
+----
+type=USER_LOGIN msg=audit(11/06/2026 04:28:58.818:87) : pid=2017 uid=root auid=sysops ses=1 subj=system_u:system_r:sshd_t:s0-s0:c0.c1023 msg='op=login id=sysops exe=/usr/libexec/openssh/sshd-session hostname=srv-core addr=192.168.56.11 terminal=/dev/pts/0 res=success' 
+----
+type=USER_AUTH msg=audit(11/06/2026 04:29:34.166:95) : pid=2100 uid=sysops auid=sysops ses=1 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_faillock,pam_usertype,pam_localuser,pam_unix acct=sysops exe=/usr/bin/sudo hostname=srv-core addr=? terminal=/dev/pts/0 res=success' 
+----
+type=USER_AUTH msg=audit(11/06/2026 04:40:06.522:169) : pid=2749 uid=root auid=sysops ses=1 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_rootok acct=julien exe=/usr/bin/su hostname=srv-core addr=? terminal=/dev/pts/1 res=success' 
+----
+type=USER_AUTH msg=audit(11/06/2026 04:42:14.794:197) : pid=2902 uid=root auid=sysops ses=1 subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 msg='op=PAM:authentication grantors=pam_rootok acct=julien exe=/usr/bin/su hostname=srv-core addr=? terminal=/dev/pts/1 res=success' 

@@ -1,0 +1,50 @@
+work (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s8
+  sources: 192.168.56.0/24
+  services: 
+  ports: 
+  protocols: 
+  forward: yes
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	rule service name="ssh" log prefix="SSH-NEW " level="info" limit value="3/m" accept limit value="6/m"
+	rule port port="10051" protocol="tcp" reject
+	rule source ipset="helios-blacklist" drop
+internal (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: bond0 bond0.42
+  sources: 
+  services: ssh
+  ports: 10051/tcp
+  protocols: 
+  forward: yes
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+	rule source ipset="helios-blacklist" drop
+table inet firewalld
+table inet firewalld {
+	chain filter_IN_work {
+		jump filter_INPUT_POLICIES_pre
+		jump filter_IN_work_pre
+		jump filter_IN_work_log
+		jump filter_IN_work_deny
+		jump filter_IN_work_allow
+		jump filter_IN_work_post
+		jump filter_INPUT_POLICIES_post
+		meta l4proto { icmp, ipv6-icmp } accept
+		meta pkttype host log prefix "filter_IN_work_REJECT: "
+		reject with icmpx admin-prohibited
+	}
+}
+-P INPUT ACCEPT
+-P FORWARD ACCEPT
+-P OUTPUT ACCEPT

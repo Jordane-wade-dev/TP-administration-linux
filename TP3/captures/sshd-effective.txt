@@ -1,0 +1,10 @@
+port 2242
+listenaddress 192.168.56.10:2242
+listenaddress 10.42.0.10:2242
+permitrootlogin no
+passwordauthentication no
+ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes256-ctr
+macs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com
+kexalgorithms curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512
+allowgroups ssh-admins
+authenticationmethods publickey

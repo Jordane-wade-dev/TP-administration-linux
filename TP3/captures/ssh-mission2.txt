@@ -1,0 +1,27 @@
+1. Old port 22 — expect failure
+Ncat: Version 7.92 ( https://nmap.org/ncat )
+Ncat: No route to host.
+2. sysops by key — expect success
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+srv-core
+sysops wheel ssh-admins
+3. Root login — expect denial
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+root@192.168.56.10: Permission denied (publickey).
+4. Password authentication — expect denial
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+sysops@192.168.56.10: Permission denied (publickey).
+5. Nadia outside ssh-admins — expect denial
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+nadia@192.168.56.10: Permission denied (publickey).
+6. TCP forwarding as sysops — expect administratively prohibited
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+channel 0: open failed: administratively prohibited: open failed
+stdio forwarding failed
+7. SHA-1 key exchange — expect no matching key exchange method
+Unable to negotiate with 192.168.56.10 port 2242: no matching key exchange method found. Their offer: curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,ext-info-s,kex-strict-s-v00@openssh.com

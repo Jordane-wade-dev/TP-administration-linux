@@ -1,0 +1,71 @@
+2026-11-05T22:26:31+0100 srv-core systemd[1]: Starting OpenSSH server daemon...
+2026-11-05T22:26:32+0100 srv-core sshd[811]: Server listening on 0.0.0.0 port 22.
+2026-11-05T22:26:32+0100 srv-core sshd[811]: Server listening on :: port 22.
+2026-11-05T22:26:32+0100 srv-core systemd[1]: Started OpenSSH server daemon.
+2026-11-05T22:37:22+0100 srv-core sshd-session[2548]: Accepted password for sysops from 192.168.56.1 port 56315 ssh2
+2026-11-05T22:37:22+0100 srv-core sshd-session[2548]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-05T22:44:08+0100 srv-core sshd-session[2997]: Accepted password for sysops from 192.168.56.1 port 54132 ssh2
+2026-11-05T22:44:08+0100 srv-core sshd-session[2997]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T00:56:18+0100 srv-core sshd-session[9706]: Connection closed by 192.168.56.11 port 55910
+2026-11-06T00:56:19+0100 srv-core sshd-session[9707]: Connection closed by 192.168.56.11 port 55918
+2026-11-06T00:56:19+0100 srv-core sshd-session[9708]: Connection closed by 192.168.56.11 port 55928
+2026-11-06T00:56:19+0100 srv-core sshd-session[9709]: Connection closed by 192.168.56.11 port 55932
+2026-11-06T01:07:06+0100 srv-core sshd-session[10260]: Connection closed by authenticating user sysops 192.168.56.11 port 51028 [preauth]
+2026-11-06T01:07:06+0100 srv-core sshd-session[10266]: Connection closed by authenticating user sysops 192.168.56.11 port 48184 [preauth]
+2026-11-06T01:07:22+0100 srv-core sshd-session[10268]: Accepted password for sysops from 192.168.56.11 port 48188 ssh2
+2026-11-06T01:07:22+0100 srv-core sshd-session[10268]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T01:07:22+0100 srv-core sshd-session[10268]: pam_unix(sshd:session): session closed for user sysops
+2026-11-06T01:07:22+0100 srv-core sshd-session[10317]: Accepted publickey for sysops from 192.168.56.11 port 46152 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+2026-11-06T01:07:23+0100 srv-core sshd-session[10317]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T01:07:23+0100 srv-core sshd-session[10317]: pam_unix(sshd:session): session closed for user sysops
+2026-11-06T01:27:15+0100 srv-core systemd[1]: Stopping OpenSSH server daemon...
+2026-11-06T01:27:15+0100 srv-core sshd[811]: Received signal 15; terminating.
+2026-11-06T01:27:15+0100 srv-core systemd[1]: sshd.service: Deactivated successfully.
+2026-11-06T01:27:15+0100 srv-core systemd[1]: Stopped OpenSSH server daemon.
+2026-11-06T01:27:15+0100 srv-core systemd[1]: Starting OpenSSH server daemon...
+2026-11-06T01:27:15+0100 srv-core sshd[11668]: Server listening on 10.42.0.10 port 2242.
+2026-11-06T01:27:15+0100 srv-core sshd[11668]: Server listening on 192.168.56.10 port 2242.
+2026-11-06T01:27:15+0100 srv-core systemd[1]: Started OpenSSH server daemon.
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: Connection from 192.168.56.11 port 56074 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: Postponed publickey for sysops from 192.168.56.11 port 56074 ssh2 [preauth]
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: Accepted publickey for sysops from 192.168.56.11 port 56074 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: User child is on pid 11690
+2026-11-06T01:27:39+0100 srv-core sshd-session[11687]: pam_unix(sshd:session): session closed for user sysops
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: Connection from 192.168.56.11 port 41956 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: Postponed publickey for sysops from 192.168.56.11 port 41956 ssh2 [preauth]
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: Accepted publickey for sysops from 192.168.56.11 port 41956 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: User child is on pid 11860
+2026-11-06T01:30:27+0100 srv-core sshd-session[11857]: pam_unix(sshd:session): session closed for user sysops
+2026-11-06T01:30:27+0100 srv-core sshd-session[11888]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:27+0100 srv-core sshd-session[11888]: Connection from 192.168.56.11 port 41972 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:27+0100 srv-core sshd-session[11888]: User root from 192.168.56.11 not allowed because none of user's groups are listed in AllowGroups
+2026-11-06T01:30:27+0100 srv-core sshd-session[11888]: Connection closed by invalid user root 192.168.56.11 port 41972 [preauth]
+2026-11-06T01:30:27+0100 srv-core sshd[11668]: srclimit_penalise: ipv4: new 192.168.56.11/32 deferred penalty of 1 seconds for penalty: connections without attempting authentication
+2026-11-06T01:30:27+0100 srv-core sshd-session[11890]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:27+0100 srv-core sshd-session[11890]: Connection from 192.168.56.11 port 41984 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:27+0100 srv-core sshd-session[11890]: Connection closed by authenticating user sysops 192.168.56.11 port 41984 [preauth]
+2026-11-06T01:30:28+0100 srv-core sshd-session[11892]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:28+0100 srv-core sshd-session[11892]: Connection from 192.168.56.11 port 41996 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:28+0100 srv-core sshd-session[11892]: User nadia from 192.168.56.11 not allowed because none of user's groups are listed in AllowGroups
+2026-11-06T01:30:28+0100 srv-core sshd-session[11892]: Connection closed by invalid user nadia 192.168.56.11 port 41996 [preauth]
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: Connection from 192.168.56.11 port 42012 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: Postponed publickey for sysops from 192.168.56.11 port 42012 ssh2 [preauth]
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: Accepted publickey for sysops from 192.168.56.11 port 42012 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: User child is on pid 11897
+2026-11-06T01:30:28+0100 srv-core sshd-session[11894]: pam_unix(sshd:session): session closed for user sysops
+2026-11-06T01:30:44+0100 srv-core sshd-session[11910]: main: SHA1 in signatures is disabled for RSA keys
+2026-11-06T01:30:44+0100 srv-core sshd-session[11910]: Connection from 192.168.56.11 port 46128 on 192.168.56.10 port 2242 rdomain ""
+2026-11-06T01:30:44+0100 srv-core sshd-session[11910]: Unable to negotiate with 192.168.56.11 port 46128: no matching key exchange method found. Their offer: diffie-hellman-group14-sha1,ext-info-c,kex-strict-c-v00@openssh.com [preauth]
+2026-11-06T01:30:44+0100 srv-core sshd[11668]: srclimit_penalise: ipv4: new 192.168.56.11/32 deferred penalty of 1 seconds for penalty: connections without attempting authentication

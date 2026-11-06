@@ -1,0 +1,20 @@
+type=PROCTITLE msg=audit(11/06/2026 04:42:15.030:204) : proctitle=sudo -n systemctl status helios-collect.service 
+type=PATH msg=audit(11/06/2026 04:42:15.030:204) : item=1 name=/lib64/ld-linux-x86-64.so.2 inode=50595110 dev=fd:00 mode=file,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:ld_so_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(11/06/2026 04:42:15.030:204) : item=0 name=/usr/bin/sudo inode=34668788 dev=fd:00 mode=file,suid,111 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:sudo_exec_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(11/06/2026 04:42:15.030:204) : cwd=/home/julien 
+type=EXECVE msg=audit(11/06/2026 04:42:15.030:204) : argc=5 a0=sudo a1=-n a2=systemctl a3=status a4=helios-collect.service 
+type=SYSCALL msg=audit(11/06/2026 04:42:15.030:204) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x55c2481ad120 a1=0x55c2481c68a0 a2=0x55c2481d09e0 a3=0x1b6 items=2 ppid=2903 pid=2935 auid=sysops uid=julien gid=transport euid=root suid=root fsuid=root egid=transport sgid=transport fsgid=transport tty=(none) ses=1 comm=sudo exe=/usr/bin/sudo subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=privesc 
+----
+type=PROCTITLE msg=audit(11/06/2026 04:42:15.078:208) : proctitle=tail -20 
+type=PATH msg=audit(11/06/2026 04:42:15.078:208) : item=1 name=/lib64/ld-linux-x86-64.so.2 inode=50595110 dev=fd:00 mode=file,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:ld_so_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(11/06/2026 04:42:15.078:208) : item=0 name=/bin/tail inode=34329562 dev=fd:00 mode=file,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:bin_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(11/06/2026 04:42:15.078:208) : cwd=/root 
+type=EXECVE msg=audit(11/06/2026 04:42:15.078:208) : argc=2 a0=tail a1=-20 
+type=SYSCALL msg=audit(11/06/2026 04:42:15.078:208) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x555740da4f60 a1=0x555740da08c0 a2=0x555740d6d6e0 a3=0x1b6 items=2 ppid=2284 pid=2937 auid=sysops uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=tail exe=/usr/bin/tail subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=privesc 
+----
+type=PROCTITLE msg=audit(11/06/2026 04:42:15.078:209) : proctitle=ausearch -k privesc -i --start today 
+type=PATH msg=audit(11/06/2026 04:42:15.078:209) : item=1 name=/lib64/ld-linux-x86-64.so.2 inode=50595110 dev=fd:00 mode=file,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:ld_so_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=PATH msg=audit(11/06/2026 04:42:15.078:209) : item=0 name=/sbin/ausearch inode=50963076 dev=fd:00 mode=file,755 ouid=root ogid=root rdev=00:00 obj=system_u:object_r:bin_t:s0 nametype=NORMAL cap_fp=none cap_fi=none cap_fe=0 cap_fver=0 cap_frootid=0 
+type=CWD msg=audit(11/06/2026 04:42:15.078:209) : cwd=/root 
+type=EXECVE msg=audit(11/06/2026 04:42:15.078:209) : argc=6 a0=ausearch a1=-k a2=privesc a3=-i a4=--start a5=today 
+type=SYSCALL msg=audit(11/06/2026 04:42:15.078:209) : arch=x86_64 syscall=execve success=yes exit=0 a0=0x555740da4f60 a1=0x555740da1280 a2=0x555740d6d6e0 a3=0x8 items=2 ppid=2284 pid=2936 auid=sysops uid=root gid=root euid=root suid=root fsuid=root egid=root sgid=root fsgid=root tty=pts1 ses=1 comm=ausearch exe=/usr/sbin/ausearch subj=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023 key=privesc 

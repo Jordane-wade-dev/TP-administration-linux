@@ -1,0 +1,206 @@
+1. Avertissements SSH des deux dernières heures
+-- No entries --
+2. Connexions SSH acceptées et échecs
+Nov 06 01:34:10 srv-core systemd[1]: sshd.service: Failed with result 'exit-code'.
+Nov 06 01:34:10 srv-core systemd[1]: Failed to start OpenSSH server daemon.
+Nov 06 04:28:58 srv-core sshd-session[2017]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+Nov 06 04:28:58 srv-core sshd-session[2017]: Accepted key ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90 found at /home/sysops/.ssh/authorized_keys:1
+Nov 06 04:28:58 srv-core sshd-session[2017]: Accepted publickey for sysops from 192.168.56.11 port 48580 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+3. Événements d’authentification depuis minuit
+Nov 06 00:56:18 srv-core sshd-session[9706]: Connection closed by 192.168.56.11 port 55910
+Nov 06 00:56:19 srv-core sshd-session[9707]: Connection closed by 192.168.56.11 port 55918
+Nov 06 00:56:19 srv-core sshd-session[9708]: Connection closed by 192.168.56.11 port 55928
+Nov 06 00:56:19 srv-core sshd-session[9709]: Connection closed by 192.168.56.11 port 55932
+Nov 06 01:05:53 srv-core groupadd[10183]: group added to /etc/group: name=ssh-admins, GID=995
+Nov 06 01:05:53 srv-core groupadd[10183]: group added to /etc/gshadow: name=ssh-admins
+Nov 06 01:05:53 srv-core groupadd[10183]: new group: name=ssh-admins, GID=995
+Nov 06 01:05:53 srv-core usermod[10193]: add 'sysops' to group 'ssh-admins'
+Nov 06 01:05:53 srv-core usermod[10193]: add 'sysops' to shadow group 'ssh-admins'
+Nov 06 01:05:53 srv-core usermod[10200]: add 'julien' to group 'ssh-admins'
+Nov 06 01:05:53 srv-core usermod[10200]: add 'julien' to shadow group 'ssh-admins'
+Nov 06 01:07:06 srv-core sshd-session[10260]: Connection closed by authenticating user sysops 192.168.56.11 port 51028 [preauth]
+Nov 06 01:07:06 srv-core sshd-session[10266]: Connection closed by authenticating user sysops 192.168.56.11 port 48184 [preauth]
+Nov 06 01:07:22 srv-core sshd-session[10268]: Accepted password for sysops from 192.168.56.11 port 48188 ssh2
+Nov 06 01:07:22 srv-core sshd-session[10268]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+Nov 06 01:07:22 srv-core sshd-session[10284]: Received disconnect from 192.168.56.11 port 48188:11: disconnected by user
+Nov 06 01:07:22 srv-core sshd-session[10284]: Disconnected from user sysops 192.168.56.11 port 48188
+Nov 06 01:07:22 srv-core sshd-session[10268]: pam_unix(sshd:session): session closed for user sysops
+Nov 06 01:07:22 srv-core sshd-session[10317]: Accepted publickey for sysops from 192.168.56.11 port 46152 ssh2: ED25519 SHA256:aA4SwgDSQhcixR5gDhd4aIjDGHGLJQfizn1Ew3k8s90
+Nov 06 01:07:23 srv-core sshd-session[10317]: pam_unix(sshd:session): session opened for user sysops(uid=1000) by sysops(uid=0)
+4. Commandes sudo depuis minuit
+{
+	"_AUDIT_LOGINUID" : "1000",
+	"MESSAGE" : "pam_unix(sudo-i:session): session closed for user root",
+	"_SYSTEMD_SESSION" : "1",
+	"_SYSTEMD_UNIT" : "session-1.scope",
+	"_UID" : "1000",
+	"_SYSTEMD_OWNER_UID" : "1000",
+	"_COMM" : "sudo",
+	"__CURSOR" : "s=a4f5b9aee14e4a81ba586a7cee0cd62f;i=645;b=cdc168d9531949eda2b8e7ce4984a013;m=2bbf7a791;t=65f90e17daa22;x=ed7556edffae234a",
+	"_EXE" : "/usr/bin/sudo",
+	"_SELINUX_CONTEXT" : "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023",
+	"_SYSTEMD_CGROUP" : "/user.slice/user-1000.slice/session-1.scope",
+	"_PID" : "2337",
+	"_GID" : "0",
+	"SYSLOG_FACILITY" : "10",
+	"PRIORITY" : "6",
+	"_TRANSPORT" : "syslog",
+	"SYSLOG_TIMESTAMP" : "Nov  6 01:42:03 ",
+	"_SOURCE_REALTIME_TIMESTAMP" : "1793925723301683",
+	"_AUDIT_SESSION" : "1",
+	"__MONOTONIC_TIMESTAMP" : "11743504273",
+	"SYSLOG_IDENTIFIER" : "sudo",
+	"_RUNTIME_SCOPE" : "system",
+	"_BOOT_ID" : "cdc168d9531949eda2b8e7ce4984a013",
+	"_CMDLINE" : "sudo -i",
+	"_SYSTEMD_INVOCATION_ID" : "c1dd7e6ff09b4d3b982f45f452ad10c4",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"_SYSTEMD_SLICE" : "user-1000.slice",
+	"_MACHINE_ID" : "0f7188c9dedf48428150225487257c72",
+	"__REALTIME_TIMESTAMP" : "1793925723302434",
+	"_SYSTEMD_USER_SLICE" : "-.slice",
+	"_HOSTNAME" : "srv-core"
+}
+{
+	"MESSAGE" : "pam_unix(sudo-i:session): session closed for user root",
+	"__CURSOR" : "s=a4f5b9aee14e4a81ba586a7cee0cd62f;i=64a;b=cdc168d9531949eda2b8e7ce4984a013;m=2bbf8f5ec;t=65f90e17ef87d;x=20329eeff865dbc0",
+	"_GID" : "0",
+	"_SELINUX_CONTEXT" : "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023",
+	"_SYSTEMD_SLICE" : "user-1000.slice",
+	"_MACHINE_ID" : "0f7188c9dedf48428150225487257c72",
+	"_SYSTEMD_SESSION" : "4",
+	"_HOSTNAME" : "srv-core",
+	"SYSLOG_TIMESTAMP" : "Nov  6 01:42:03 ",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"_BOOT_ID" : "cdc168d9531949eda2b8e7ce4984a013",
+	"_COMM" : "sudo",
+	"SYSLOG_FACILITY" : "10",
+	"SYSLOG_IDENTIFIER" : "sudo",
+	"_TRANSPORT" : "syslog",
+	"_PID" : "3062",
+	"PRIORITY" : "6",
+	"_SYSTEMD_INVOCATION_ID" : "c52cd35cf49f4ef4805a148e691aea89",
+	"_SYSTEMD_USER_SLICE" : "-.slice",
+	"_SOURCE_REALTIME_TIMESTAMP" : "1793925723349838",
+	"__REALTIME_TIMESTAMP" : "1793925723388029",
+	"_SYSTEMD_UNIT" : "session-4.scope",
+	"_AUDIT_SESSION" : "4",
+	"_SYSTEMD_OWNER_UID" : "1000",
+	"_AUDIT_LOGINUID" : "1000",
+	"_SYSTEMD_CGROUP" : "/user.slice/user-1000.slice/session-4.scope",
+	"__MONOTONIC_TIMESTAMP" : "11743589868",
+	"_RUNTIME_SCOPE" : "system",
+	"_UID" : "1000"
+}
+{
+	"_SYSTEMD_INVOCATION_ID" : "997bebfcebe24f228f8bf29238cf1d6a",
+	"SYSLOG_FACILITY" : "10",
+	"PRIORITY" : "5",
+	"_RUNTIME_SCOPE" : "system",
+	"_SYSTEMD_UNIT" : "session-1.scope",
+	"__MONOTONIC_TIMESTAMP" : "158941798",
+	"_TRANSPORT" : "syslog",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"_SYSTEMD_SLICE" : "user-1000.slice",
+	"_COMM" : "sudo",
+	"_SELINUX_CONTEXT" : "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023",
+	"_PID" : "2100",
+	"_AUDIT_SESSION" : "1",
+	"_SYSTEMD_OWNER_UID" : "1000",
+	"SYSLOG_IDENTIFIER" : "sudo",
+	"_SOURCE_REALTIME_TIMESTAMP" : "1793935774177781",
+	"SYSLOG_TIMESTAMP" : "Nov  6 04:29:34 ",
+	"_SYSTEMD_CGROUP" : "/user.slice/user-1000.slice/session-1.scope",
+	"_SYSTEMD_SESSION" : "1",
+	"_AUDIT_LOGINUID" : "1000",
+	"_UID" : "1000",
+	"_EXE" : "/usr/bin/sudo",
+	"_CMDLINE" : "sudo journalctl --list-boots",
+	"_HOSTNAME" : "srv-core",
+	"_GID" : "1000",
+	"_MACHINE_ID" : "0f7188c9dedf48428150225487257c72",
+	"_BOOT_ID" : "aeb1e0998bdc4f9dbe90aa790bd295c7",
+	"_SYSTEMD_USER_SLICE" : "-.slice",
+	"__CURSOR" : "s=a4f5b9aee14e4a81ba586a7cee0cd62f;i=ba8;b=aeb1e0998bdc4f9dbe90aa790bd295c7;m=9794266;t=65f933891da78;x=4d889aaf4a2e08d8",
+	"__REALTIME_TIMESTAMP" : "1793935774177912",
+	"MESSAGE" : "  sysops : TTY=pts/0 ; PWD=/home/sysops ; USER=root ; COMMAND=/bin/journalctl --list-boots"
+}
+{
+	"SYSLOG_FACILITY" : "10",
+	"_CMDLINE" : "sudo journalctl --list-boots",
+	"_UID" : "1000",
+	"_GID" : "0",
+	"_SYSTEMD_UNIT" : "session-1.scope",
+	"__MONOTONIC_TIMESTAMP" : "158951769",
+	"_SELINUX_CONTEXT" : "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023",
+	"_MACHINE_ID" : "0f7188c9dedf48428150225487257c72",
+	"_TRANSPORT" : "syslog",
+	"_SYSTEMD_INVOCATION_ID" : "997bebfcebe24f228f8bf29238cf1d6a",
+	"_RUNTIME_SCOPE" : "system",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"_COMM" : "sudo",
+	"__CURSOR" : "s=a4f5b9aee14e4a81ba586a7cee0cd62f;i=ba9;b=aeb1e0998bdc4f9dbe90aa790bd295c7;m=9796959;t=65f933892016b;x=3cdf6d60a755d69d",
+	"_SYSTEMD_USER_SLICE" : "-.slice",
+	"_SOURCE_REALTIME_TIMESTAMP" : "1793935774187816",
+	"_AUDIT_LOGINUID" : "1000",
+	"PRIORITY" : "6",
+	"_SYSTEMD_CGROUP" : "/user.slice/user-1000.slice/session-1.scope",
+	"_SYSTEMD_SLICE" : "user-1000.slice",
+	"_HOSTNAME" : "srv-core",
+	"_SYSTEMD_OWNER_UID" : "1000",
+	"_SYSTEMD_SESSION" : "1",
+	"_EXE" : "/usr/bin/sudo",
+	"MESSAGE" : "pam_unix(sudo:session): session opened for user root(uid=0) by sysops(uid=1000)",
+	"SYSLOG_IDENTIFIER" : "sudo",
+	"_PID" : "2100",
+	"_AUDIT_SESSION" : "1",
+	"SYSLOG_TIMESTAMP" : "Nov  6 04:29:34 ",
+	"__REALTIME_TIMESTAMP" : "1793935774187883",
+	"_BOOT_ID" : "aeb1e0998bdc4f9dbe90aa790bd295c7"
+}
+{
+	"_COMM" : "sudo",
+	"_PID" : "2100",
+	"__REALTIME_TIMESTAMP" : "1793935774211985",
+	"PRIORITY" : "6",
+	"_RUNTIME_SCOPE" : "system",
+	"_CAP_EFFECTIVE" : "1ffffffffff",
+	"MESSAGE" : "pam_unix(sudo:session): session closed for user root",
+	"_SOURCE_REALTIME_TIMESTAMP" : "1793935774211805",
+	"SYSLOG_FACILITY" : "10",
+	"_GID" : "0",
+	"__MONOTONIC_TIMESTAMP" : "158975872",
+	"_SELINUX_CONTEXT" : "unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023",
+	"_AUDIT_SESSION" : "1",
+	"_BOOT_ID" : "aeb1e0998bdc4f9dbe90aa790bd295c7",
+	"_SYSTEMD_CGROUP" : "/user.slice/user-1000.slice/session-1.scope",
+	"_UID" : "1000",
+	"SYSLOG_IDENTIFIER" : "sudo",
+	"__CURSOR" : "s=a4f5b9aee14e4a81ba586a7cee0cd62f;i=baa;b=aeb1e0998bdc4f9dbe90aa790bd295c7;m=979c780;t=65f9338925f91;x=8de310a8bb491d9a",
+	"_HOSTNAME" : "srv-core",
+	"_TRANSPORT" : "syslog",
+	"_SYSTEMD_UNIT" : "session-1.scope",
+	"_SYSTEMD_INVOCATION_ID" : "997bebfcebe24f228f8bf29238cf1d6a",
+	"_SYSTEMD_USER_SLICE" : "-.slice",
+	"SYSLOG_TIMESTAMP" : "Nov  6 04:29:34 ",
+	"_SYSTEMD_OWNER_UID" : "1000",
+	"_EXE" : "/usr/bin/sudo",
+	"_SYSTEMD_SLICE" : "user-1000.slice",
+	"_SYSTEMD_SESSION" : "1",
+	"_AUDIT_LOGINUID" : "1000",
+	"_CMDLINE" : "sudo journalctl --list-boots",
+	"_MACHINE_ID" : "0f7188c9dedf48428150225487257c72"
+}
+5. Erreurs du démarrage précédent
+Nov 05 22:26:22 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Nov 05 22:26:22 localhost kernel: Warning: Unmaintained driver is detected: e1000_init_module
+Nov 05 22:26:23 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Nov 05 22:26:23 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Nov 05 22:26:23 localhost kernel: Warning: Unmaintained driver is detected: e1000
+Nov 05 22:26:23 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* vmwgfx seems to be running on an unsupported hypervisor.
+Nov 05 22:26:23 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* This configuration is likely broken.
+Nov 05 22:26:23 localhost kernel: vmwgfx 0000:00:02.0: [drm] *ERROR* Please switch to a supported graphics device to avoid problems.
+Nov 05 22:29:58 srv-core sudo[2063]:   sysops : 3 incorrect password attempts ; TTY=tty1 ; PWD=/root ; USER=root ; COMMAND=/bin/bash
+Nov 06 01:42:03 srv-core sshd-session[2997]: error: mm_reap: preauth child terminated by signal 15
+Nov 06 01:42:04 srv-core dbus-broker-launch[728]: Activation request for 'org.freedesktop.nm_dispatcher' failed.
+Nov 06 01:42:04 srv-core dbus-broker-launch[728]: Activation request for 'org.freedesktop.nm_dispatcher' failed.

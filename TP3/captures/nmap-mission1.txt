@@ -1,0 +1,10 @@
+Starting Nmap 7.92 ( https://nmap.org ) at 2026-11-06 03:44 CET
+Nmap scan report for 192.168.56.10
+Host is up (0.0068s latency).
+
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    filtered http
+10051/tcp closed   zabbix-trapper
+
+Nmap done: 1 IP address (1 host up) scanned in 0.50 seconds
