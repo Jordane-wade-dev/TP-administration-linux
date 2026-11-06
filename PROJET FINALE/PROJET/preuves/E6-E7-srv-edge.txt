@@ -1,0 +1,8 @@
+Reseau metier : HTTP 200
+Ncat: Version 7.92 ( https://nmap.org/ncat )
+Ncat: No route to host.
+Code du test sur le reseau administration : 1
+*** Serveur Helios Logistique - acces strictement reserve ***
+Toute connexion est journalisee.
+lea@192.168.56.10: Permission denied (publickey).
+Code du test SSH de Lea : 255

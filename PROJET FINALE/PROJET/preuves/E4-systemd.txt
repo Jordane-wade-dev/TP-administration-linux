@@ -1,0 +1,15 @@
+MainPID=12785
+NRestarts=0
+MainPID=13030
+NRestarts=1
+ActiveState=active
+HTTP apres redemarrage : 200
+  helios-suivi.service
+  helios-suivi-publish.timer
+NEXT                        LEFT          LAST                        PASSED  UNIT                       ACTIVATES
+Fri 2026-11-06 07:48:00 CET 1min 13s left Fri 2026-11-06 07:46:00 CET 45s ago helios-suivi-publish.timer helios-suivi-publish.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.
+
+→ Overall exposure level for helios-suivi.service: 1.8 OK 🙂

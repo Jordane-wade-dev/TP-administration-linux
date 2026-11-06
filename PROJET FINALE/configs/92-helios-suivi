@@ -1,0 +1,5 @@
+%suivi ALL=(root) /usr/bin/systemctl restart helios-suivi.service
+%suivi ALL=(root) /usr/bin/systemctl status helios-suivi.service --no-pager
+%suivi ALL=(root) /usr/bin/systemctl start helios-suivi-publish.service
+%suivi ALL=(root) /usr/bin/journalctl -u helios-suivi.service -n 100 --no-pager
+%suivi ALL=(root) /usr/bin/journalctl -u helios-suivi-publish.service -n 100 --no-pager

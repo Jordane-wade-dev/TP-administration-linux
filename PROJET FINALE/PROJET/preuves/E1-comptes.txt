@@ -1,0 +1,2 @@
+uid=5104(lea) gid=5003(suivi) groups=5003(suivi)
+helios-suivi:x:994:993::/srv/helios/suivi:/sbin/nologin

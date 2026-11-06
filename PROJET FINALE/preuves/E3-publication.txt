@@ -1,0 +1,28 @@
+{
+    "genere": "2026-11-06T09:26:01+01:00",
+    "hote": "srv-core",
+    "derniere_mesure": "2026-11-06T09:25:56+01:00",
+    "charge_1min": 0.0,
+    "mem_dispo_ko": 1353344,
+    "mesures": 3512
+}
+Nov 06 08:48:01 srv-core helios-suivi-publish[16580]: Publication de etat.json terminee
+Nov 06 08:50:01 srv-core helios-suivi-publish[16689]: Publication de etat.json terminee
+Nov 06 08:52:01 srv-core helios-suivi-publish[16796]: Publication de etat.json terminee
+Nov 06 08:54:01 srv-core helios-suivi-publish[16904]: Publication de etat.json terminee
+Nov 06 08:56:01 srv-core helios-suivi-publish[17018]: Publication de etat.json terminee
+Nov 06 08:58:01 srv-core helios-suivi-publish[17200]: Publication de etat.json terminee
+Nov 06 09:00:01 srv-core helios-suivi-publish[17370]: Publication de etat.json terminee
+Nov 06 09:02:01 srv-core helios-suivi-publish[17551]: Publication de etat.json terminee
+Nov 06 09:04:01 srv-core helios-suivi-publish[17673]: Publication de etat.json terminee
+Nov 06 09:06:01 srv-core helios-suivi-publish[17868]: Publication de etat.json terminee
+Nov 06 09:08:01 srv-core helios-suivi-publish[17992]: Publication de etat.json terminee
+Nov 06 09:10:01 srv-core helios-suivi-publish[18114]: Publication de etat.json terminee
+Nov 06 09:12:01 srv-core helios-suivi-publish[18222]: Publication de etat.json terminee
+Nov 06 09:14:01 srv-core helios-suivi-publish[18330]: Publication de etat.json terminee
+Nov 06 09:16:01 srv-core helios-suivi-publish[22451]: Publication de etat.json terminee
+Nov 06 09:18:01 srv-core helios-suivi-publish[22559]: Publication de etat.json terminee
+Nov 06 09:20:01 srv-core helios-suivi-publish[22670]: Publication de etat.json terminee
+Nov 06 09:22:01 srv-core helios-suivi-publish[22780]: Publication de etat.json terminee
+Nov 06 09:24:01 srv-core helios-suivi-publish[22888]: Publication de etat.json terminee
+Nov 06 09:26:01 srv-core helios-suivi-publish[23001]: Publication de etat.json terminee

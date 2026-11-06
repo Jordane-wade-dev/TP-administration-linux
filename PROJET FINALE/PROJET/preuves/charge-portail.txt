@@ -1,0 +1,13 @@
+Avant les requetes
+MemoryCurrent=10223616
+CPUUsageNSec=1562287000
+nr_periods 2277
+nr_throttled 4
+throttled_usec 157405
+Requetes reussies : 2000 / 2000
+Apres les requetes
+MemoryCurrent=10268672
+CPUUsageNSec=4454762000
+nr_periods 2528
+nr_throttled 4
+throttled_usec 157405

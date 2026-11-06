@@ -1,0 +1,5 @@
+drop
+yes
+yes
+internal:   ports: 10051/tcp 2242/tcp 8080/tcp
+		tcp dport 8080 accept

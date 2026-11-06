@@ -1,0 +1,15 @@
+suivi-20261106-090542.tar.gz: OK
+Copie de test : /var/tmp/helios-restore.tWBHY3
+getfacl: Removing leading '/' from absolute path names
+getfacl: Removing leading '/' from absolute path names
+ACL de www identiques
+rm: remove regular file '/srv/helios/suivi/www/index.html'? Suppression simulee
+getfacl: Removing leading '/' from absolute path names
+getfacl: Removing leading '/' from absolute path names
+index.html restaure avec ses ACL en 180154 ms
+<h1>Suivi des tournees Helios</h1>
+NEXT                        LEFT     LAST PASSED UNIT                      ACTIVATES
+Sat 2026-11-07 03:15:00 CET 18h left -    -      helios-suivi-backup.timer helios-suivi-backup.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.
