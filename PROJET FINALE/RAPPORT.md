@@ -15,7 +15,7 @@ Environnement : Rocky Linux 9.8, srv-core et srv-edge
 | E6 Pare-feu | `firewall-cmd`, `curl` et `nc` depuis srv-edge | La zone par défaut reste drop. Le port 8080 est ouvert dans internal. Depuis srv-edge, le portail répond 200 sur le réseau métier et le test du port sur le réseau d’administration renvoie 1. [Pare-feu](preuves/E6-firewall.txt) · [Tests](preuves/E6-E7-srv-edge.txt) |
 | E7 Non-régression | `sshd -T`, journal SSH et liste des démarrages | SSH reste sur 2242, avec les connexions root et par mot de passe désactivées. Le journal confirme le refus de Léa par AllowGroups. Le timer de surveillance est actif et le journal du démarrage précédent est disponible. [Preuve](preuves/E7-securite.txt) |
 | E8 Supervision | `zabbix_get` sur helios.suivi.http et helios.suivi.age | L’agent et la collecte sysstat sont actifs. Les sondes ont renvoyé 200 et 86 secondes. [Preuve](preuves/E8-zabbix.txt) |
-| E9 Sauvegarde | `sha256sum -c`, `tar --acls`, `getfacl`, `systemctl list-timers` | Empreinte OK, ACL identiques et restauration de la page réussie. La sauvegarde est planifiée à 03 h 15. [Preuve](preuves/E9-restauration.txt) |
+| E9 Sauvegarde | `sha256sum -c`, `tar --acls`, `getfacl`, `systemctl list-timers` | Empreinte OK, ACL identiques et restauration de la page réussie. La sauvegarde est planifiée à 03 h 15. [Preuve](preuves/E9-restauration.txt) 
 
 ## 2. Justifications
 
@@ -41,4 +41,4 @@ Le quota CPU de 50 % n’a pas freiné le portail pendant ce test. Le compteur n
 
 ## 5. Limites connues
 
-Les requêtes du test de charge ont été envoyées une par une. Avec plus de temps, je testerais des connexions simultanées et je vérifierais la rétention en créant plus de sept sauvegardes.
+Les requêtes du test de charge ont été envoyées une par une. Avec plus de temps, je testerais des connexions simultanées et je vérifierais la rétention en créant plus de sept sauvegardes.Je n’ai pas pris l’instantané 04-debut-projet avant de commencer. Après les tests, j’ai créé l’instantané 05-fin-projet dans VirtualBox pour conserver l’état final de srv-core.
